@@ -11,11 +11,10 @@ find_package(catkin REQUIRED COMPONENTS
 	rospack
 	diagnostic_msgs
 )
+find_package(fmt REQUIRED)
 
 catkin_package()
 include_directories(${catkin_INCLUDE_DIRS})
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Werror")
 
 find_package(TinyXML REQUIRED)
 
@@ -126,6 +125,7 @@ add_executable(dump_param
 )
 target_link_libraries(dump_param
 	${catkin_LIBRARIES}
+	fmt::fmt
 )
 
 add_executable(abort_really_long_executable
