@@ -107,6 +107,7 @@ target_link_libraries(rosmon
 	yaml-cpp
 	util
 	rosmon_launch_config
+	fmt::fmt
 )
 
 add_dependencies(rosmon ${catkin_EXPORTED_TARGETS})
